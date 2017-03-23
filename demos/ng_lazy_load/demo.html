@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="utf-8">
+
+    <title>NG Lazy Load</title>
+
+    <style>
+        thead { background: lightgray; align-content: center; }
+        tbody { display: block; overflow: auto; height: 250px; border-collapse: collapse; }
+        th { height: 40px; width: auto; border: 1px solid black; text-align: center; }
+        td { height: 30px; width: 120px; margin: 0px; padding: 5px; border: 1px solid black;}
+    </style>
+
+</head>
+
+<body>
+    <table ng-app="ngLazyApp" ng-controller="ngLazyController">
+        <thead>
+            <tr>
+                <th colspan="4">Historical Stock Quote Price</th>
+            </tr>
+        </thead>
+        <tbody when-scroll-ends="loadMoreRecords()">
+            <tr ng-repeat="stock in stockList">
+                <td>{{stock.dateValue | date:'mediumDate'}}</td>
+                <td>{{stock.price | currency:'$':2}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+
+    <script src="demo.js" />
+</body>
+</html>
