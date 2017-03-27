@@ -61,4 +61,6 @@
 
         - Server-side processing - where filtering, paging and sorting calculations are all performed by a server. DataTables will send parameters to the server indicating what data it needs (what page, what filters are applied etc), and also expects certain parameters back in order that it has all the information required to display the table.
 
-        - The same can be done using Pure JS, and pagination should be added to get the sorted data and show it in the UI. This way large processing can be avoided. 
+        - The same can be done using Pure JS, and pagination should be added to get the sorted data and show it in the UI. This way large processing can be avoided.
+
+        [https://datatables.net/examples/data_sources/server_side.html](https://datatables.net/examples/data_sources/server_side.html) 
